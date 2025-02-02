@@ -1,0 +1,85 @@
+doctype html 
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		title Michael Kurilichev
+		meta(name="description", content="Michael Kurilichev's personal website. Software developer from Saint Petersburg.")
+		link(rel="stylesheet", href="./style.css")
+	body
+		main.main
+			.header-hero
+				.headline
+					h1 Michael
+					img.avatar(
+						alt="Michael Kurilichev Avatar",
+						src="./avatar-michael.jpg"
+					)
+				h1.bold.accent Kurilichev
+
+			.container-bio.grid
+				.data
+					h2.accent from
+					p Saint Petersburg
+				.data
+					h2.accent age
+					p 21
+				.data
+					h2.accent profession
+					p software dev
+
+			.container
+				header.header
+					h1 The Technology Chronicle
+					p.date Today
+						article
+							p.first Modern software development demands mastery of various tools and technologies. I use the essential stack that powers today's digital innovations.
+						.grid-news
+							.news
+								h2 Core Development
+								ul.tech-list
+									li.tech-item HTML/CSS/JavaScript: The foundation of web development
+									li.tech-item Kotlin/Java: Robust backend solutions
+									li.tech-item Python: Versatile programming powerhouse
+									li.tech-item C#, C++: System-level programming excellence
+							.news-merged
+								.news
+									h2 Version Control & Collaboration
+									ul.tech-list
+										li.tech-item Git: Industry-standard version control
+										li.tech-item GitHub: Leading collaboration platform
+										li.tech-item GitLab: Enterprise-grade repository management
+
+								.news
+									h2 Tools & Databases
+									ul.tech-list
+										li.tech-item Craft, Notion: Modern documentation
+										li.tech-item Jira, GitHub Projects: Project management
+										li.tech-item SQLite, PostgreSQL, MySQL: Data management solutions
+			.portfolio
+				h1 Portfolio
+				.projects-grid
+					.project-large
+						a(href="https://github.com/Qwan-Chi/SaintLandmark")
+							.project-card
+								.project-content
+									h2 Saint Landmark
+									p Android application for discovering new places in Saint Petersburg, written using Kotlin and Compose
+					.project-medium
+						a(href="https://github.com/Qwan-Chi/CryptBuddy")
+							.project-card
+								.project-content
+									h2 Crypt Buddy
+									p Intuitive local password manager for Android
+					.project-small
+						a(href="https://github.com/Qwan-Chi/ono-tebe-nado-fd")
+							.project-card
+								.project-content
+									h2 Ono Tebe Nado
+									p Vanilla Web frontend website for an auction
+			.footer
+				footer.footer
+					p Copyright © 2025 Michael Kurilichev. All rights reserved.
+					.socials 
+						a(href="https://github.com/Qwan-Chi") GitHub
+						a(href="https://t.me/bigcock18cm") Telegram

@@ -1,0 +1,387 @@
+@import url("https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap");
+@import url("./reset.css");
+
+:root {
+  /* Основные */
+  --primary: #121212; /* Глубокий черный для текста */
+  --secondary: #f7f7f7; /* Почти белый фон */
+
+  /* Акценты */
+  --accent-1: #143061; /* Приглушенный синий */
+  --accent-2: #c7c7c7; /* Серый для разделителей */
+
+  /* Дополнительные */
+  --subtle: #e2e2e2; /* Светло-серый для фона блоков */
+  --link: #326891; /* Синий для ссылок */
+  --error: #9c1a1c; /* Темно-красный */
+}
+
+a {
+  color: initial;
+  text-decoration: none;
+}
+
+/* @media (prefers-color-scheme: dark) {
+	body {
+		color: var(--secondary);
+		background-color: var(--primary);
+	}
+} */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.5;
+  font-size: clamp(20px, 24px, 24px);
+  font-family: "Golos Text", sans-serif;
+  color: var(--primary);
+  background-color: var(--secondary);
+  border: 2px solid var(--primary);
+  padding: 24px;
+  margin: 24px;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.accent {
+  color: var(--accent-1);
+}
+
+.bold {
+  font-weight: 800;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Newsreader, serif;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 8rem;
+}
+
+.avatar {
+  height: 8rem;
+  filter: grayscale();
+  padding: 0.5vw;
+  outline: 2px solid var(--accent-1);
+}
+
+.header-hero {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 1;
+}
+
+.headline {
+  align-items: center;
+  gap: 12px;
+  display: flex;
+  margin-bottom: 24px;
+}
+
+.data h2 {
+  left: -24px;
+  position: relative;
+}
+
+.data h2::after {
+  content: "~";
+  font-size: 64px;
+  position: absolute;
+  left: 0;
+  top: 6px;
+}
+
+.data p {
+  position: relative;
+  left: 12px;
+  top: 12px;
+}
+
+.data {
+  margin: 36px;
+}
+
+.container-bio {
+  background-color: var(--subtle);
+  padding: 1vw;
+}
+
+.grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 6vw;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid var(--accent-2);
+}
+
+.header h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.header .date {
+  color: var(--accent-1);
+  font-style: italic;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 4vw;
+}
+
+.first::first-letter {
+  font-size: 4rem;
+  color: var(--accent-1);
+}
+
+.grid-news {
+  margin-top: 6vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.grid-news > .news {
+  transition: transform 0.2s ease;
+}
+
+.news-merged {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+}
+
+.news {
+  background: var(--subtle);
+  padding: 20px;
+  transition: transform 0.2s ease;
+}
+
+.news:hover {
+  transform: translateY(-10px);
+}
+
+/* Медиа-запрос для мобильных устройств */
+@media (max-width: 768px) {
+  .grid-news {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .news-merged {
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+
+  .avatar {
+    max-height: 4rem;
+  }
+}
+
+.news ul {
+  list-style-position: inside;
+  text-align: left;
+  list-style-type: disc;
+}
+
+.news li::marker {
+  color: var(--accent-1);
+}
+
+ul li {
+  margin-bottom: 1.2em;
+  color: var(--primary);
+}
+
+.news h2 {
+  font-size: 1.8rem;
+  font-style: italic;
+  color: var(--accent-1);
+}
+
+.news {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+.portfolio h2 {
+  font-size: 4rem;
+  color: var(--accent-1);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Большой проект на 6 колонок */
+.project-large {
+  grid-column: span 5;
+  grid-row: span 2;
+}
+
+/* Средний проект на 4 колонки */
+.project-medium {
+  grid-column: span 4;
+}
+
+/* Маленький проект на 3 колонки */
+.project-small {
+  grid-column: span 3;
+}
+
+/* Карточка проекта */
+.project-card {
+  background: var(--secondary);
+  overflow: hidden;
+  border-right: 2px solid var(--accent-1);
+  position: relative;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Контент внутри карточки */
+.project-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-content h2 {
+  text-align: end;
+}
+
+.portfolio > h1 {
+  border-bottom: 3px dotted var(--primary);
+}
+
+/* Изображение проекта */
+.project-image {
+  width: 100%;
+  height: 60%;
+  object-fit: cover;
+  border-bottom: 1px solid var(--accent-2);
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+  .project-large {
+    grid-column: span 6;
+  }
+  .project-medium {
+    grid-column: span 3;
+  }
+  .project-small {
+    grid-column: span 3;
+  }
+
+  .project-card h2 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .projects-grid {
+    grid-template-columns: repeat(8, 1fr);
+    gap: 1.5rem;
+  }
+  .project-large {
+    grid-column: span 8;
+  }
+  .project-medium {
+    grid-column: span 4;
+  }
+  .project-small {
+    grid-column: span 4;
+  }
+  .project-card h2 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .projects-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+  .project-large,
+  .project-medium,
+  .project-small {
+    grid-column: span 4;
+  }
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer a {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 0.3em;
+  transition: color 0.3s;
+}
+
+.footer a:hover {
+  color: var(--accent-1);
+}
+
+.footer p {
+  font-size: 1.2rem;
+}
+
+.socials {
+  display: flex;
+  gap: 1rem;
+}
+
+.socials a::before {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+  content: "✦";
+  transition: background 0.3s;
+}
